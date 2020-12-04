@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 03, 2020 at 08:00 AM
+-- Generation Time: Dec 04, 2020 at 09:38 AM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.3.23
 
@@ -29,13 +29,13 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `nv4_vi_albuminfo` (
   `id` int(11) NOT NULL COMMENT 'id',
-  `album_name` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '' COMMENT 'tên album',
+  `albumname` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '' COMMENT 'tên album',
   `image` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '' COMMENT 'ảnh của album',
-  `description` text COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '' COMMENT 'mô tả album',
+  `description` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '''''' COMMENT 'mô tả album',
   `status` tinyint(4) NOT NULL DEFAULT 1 COMMENT 'hiên thị',
-  `weight` tinyint(4) NOT NULL DEFAULT 1,
-  `update_time` timestamp NOT NULL DEFAULT current_timestamp() COMMENT 'thời gian cập nhật',
-  `creat_time` timestamp NOT NULL DEFAULT current_timestamp() COMMENT 'thời gian đăng'
+  `weight` tinyint(11) NOT NULL DEFAULT 0,
+  `updatetime` int(11) NOT NULL COMMENT 'thời gian cập nhật',
+  `creattime` int(11) NOT NULL COMMENT 'thời gian đăng'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -56,7 +56,7 @@ ALTER TABLE `nv4_vi_albuminfo`
 -- AUTO_INCREMENT for table `nv4_vi_albuminfo`
 --
 ALTER TABLE `nv4_vi_albuminfo`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'id';
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'id', AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
